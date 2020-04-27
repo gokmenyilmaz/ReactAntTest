@@ -11,8 +11,8 @@ const { Header, Sider, Content } = Layout;
 export default class Mylayout extends Component {
   render() {
     return (
-      <Layout>
-        <Sider>
+      <Layout >
+        <Sider style={{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0 }}>
           <div className="logo" />
           <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
             <Menu.Item key="1">
@@ -30,67 +30,59 @@ export default class Mylayout extends Component {
           </Menu>
         </Sider>
         <Layout className="site-layout">
-          <Header
+          <Header style={{ position: 'fixed', width: '100%' }}
             className="site-layout-background"
-            style={{ padding: 0 }}
+          
           ></Header>
-          <Content
+          <Content style={{ marginLeft: 200, marginTop:64 }}
             className="site-layout-background"
-            style={{
-              margin: "24px 16px",
-              padding: 24,
-              minHeight: 280,
-            }}
+    
           >
-            Content
-            yty
-            tyt
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-
-trtr
-<br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            
-
+            Content yty tyt
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            trtr
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            fffffffff
           </Content>
         </Layout>
       </Layout>
