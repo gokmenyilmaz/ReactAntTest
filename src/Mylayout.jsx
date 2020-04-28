@@ -12,7 +12,7 @@ export default class Mylayout extends Component {
   render() {
     return (
       <Layout >
-        <Sider style={{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0 }}>
+        <Sider>
           <div className="logo" />
           <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
             <Menu.Item key="1">
@@ -29,55 +29,78 @@ export default class Mylayout extends Component {
             </Menu.Item>
           </Menu>
         </Sider>
-        <Layout className="site-layout">
-          <Header style={{ position: 'fixed', width: '100%' }}
+        <Layout style={{ height:'100vh', overflowX:"hidden" }} className="site-layout">
+          <Header style={{position:"fixed", width:"100%"}}
             className="site-layout-background"
           
           ></Header>
-          <Content style={{ marginLeft: 200, marginTop:64 }}
+          <Content style={{ marginTop:64 }}
             className="site-layout-background"
     
           >
+            ilk
+            <br />
+            <br />
+            <br />
+            
+            <br />
+            <br />
             Content yty tyt
             <br />
             <br />
             <br />
+            
             <br />
             <br />
             <br />
             <br />
             <br />
             <br />
+            Content yty tyt
+            <br />
+            <br />
+            <br />
+            
             <br />
             <br />
             <br />
             <br />
             <br />
             <br />
-            <br />
-            trtr
-            <br />
+            Content yty tyt
             <br />
             <br />
             <br />
-            <br />
+            
             <br />
             <br />
             <br />
             <br />
             <br />
             <br />
+            Content yty tyt
+            <br />
+            <br />
+            <br />
+            
             <br />
             <br />
             <br />
             <br />
             <br />
             <br />
+            Content yty tyt
+            <br />
+            <br />
+            <br />
+            
             <br />
             <br />
             <br />
             <br />
             <br />
+            <br />
+
             <br />
             <br />
             <br />
