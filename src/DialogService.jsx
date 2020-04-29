@@ -76,22 +76,29 @@ class DialogService extends Component {
             </button>
           </header>
 
-          <div className="gk-modal-body">
-            {this.state.modalParams.formComponent}
-          </div>
+          <div className="gk-modal-body">{this.state.modalParams.formBody}</div>
 
-          <footer className="gk-modal-footer">
+          <footer
+            className="gk-modal-footer"
+           
+          >
             <button
+              style={{
+                display: this.state.modalParams.cancelText ? "inline-block" : "none",
+              }}
               className="gk-btn gk-btn-secondary"
               onClick={this.handleCancel}
             >
               {this.state.modalParams.cancelText}
             </button>
             <button
+              style={{
+                display: this.state.modalParams.okText ? "inline-block" : "none",
+              }}
               className="gk-btn gk-btn-primary"
               onClick={this.handleConfirm}
             >
-               {this.state.modalParams.okText}
+              {this.state.modalParams.okText}
             </button>
           </footer>
         </div>

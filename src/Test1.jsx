@@ -18,9 +18,10 @@ export default class Test1 extends Component {
 
     var x = await frm.show({
       title: "Başlama/Erteleme Bildirimi Gereken İşler",
-      formComponent: <KurumSec />,
+      // formBody: "Deneme",
+      formBody: <KurumSec />,
       okText: "Tamam",
-      cancelText: "İptal",
+      // cancelText: "İptal",
     });
 
     console.log(x);
