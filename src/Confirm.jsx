@@ -24,6 +24,19 @@ class Confirm extends Component {
     this.show = this.show.bind(this);
   }
 
+
+  componentDidMount()
+  {
+    document.addEventListener('keydown', this.keydownHandle, false);
+  }
+
+  componentWillUnmount(){
+    document.removeEventListener("keydown", this.keydownHandle, false);
+  }
+
+  keydownHandle=(e)=>{
+    if(e.keyCode===27)  this.handleCancel();
+  }
   handleCancel() {
     this.setState({ isOpen: false });
     resolve(false);
