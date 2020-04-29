@@ -1,18 +1,33 @@
 import React, { Component } from "react";
-import confirm from "./Confirm";
-import mytext from "./MyTextBox";
+import dialogService from "./DialogService";
+import KurumSec from "./KurumSec"
+
+import { messageService } from "./message.service";
 
 export default class Test1 extends Component {
+
+  componentDidMount()
+  {
+    messageService.getMessage().subscribe(message => {
+      if (message) {
+        console.log(message);
+      }});
+  }
+
+
+
   async Onayla() {
-    var frm = confirm.create();
+    var frm = dialogService.create();
+    
     var x = await frm.show({
       title: "Başlama/Erteleme Bildirimi Gereken İşler",
-      showFooter: true,
-      okText: "Tamam",
-      cancelText: "İptal",
+      formComponent:(<KurumSec/>)
+
     });
 
     console.log(x);
+
+    
   }
 
   render() {

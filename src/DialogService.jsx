@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import { render, unmountComponentAtNode } from "react-dom";
-import "./confirm.css";
+import "./DialogService.css";
 
 let resolve;
 
-class Confirm extends Component {
+class DialogService extends Component {
   static create(props = {}) {
     const containerElement = document.createElement("div");
     containerElement.setAttribute("id", "gk-modal1");
     document.body.appendChild(containerElement);
-    return render(<Confirm />, containerElement);
+    return render(<DialogService />, containerElement);
   }
 
   constructor(props) {
@@ -55,8 +55,9 @@ class Confirm extends Component {
     resolve(true);
   }
 
-  show(props = {}) {
-    this.setState({ isOpen: true });
+  show(params = {}) {
+
+    this.setState({ isOpen: true,formComponent:params.formComponent });
     return new Promise((res) => {
       resolve = res;
     });
@@ -75,7 +76,10 @@ class Confirm extends Component {
             </button>
           </header>
 
-          <div className="gk-modal-body">İçi</div>
+          <div className="gk-modal-body">
+            {this.state.formComponent}
+
+          </div>
 
           <footer className="gk-modal-footer">
             <button
@@ -97,4 +101,4 @@ class Confirm extends Component {
   }
 }
 
-export default Confirm;
+export default DialogService;
