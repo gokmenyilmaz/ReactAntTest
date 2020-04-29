@@ -45,25 +45,15 @@ class Confirm extends Component {
     const { isOpen } = this.state;
 
     return (
-      <div className={!isOpen ? "modal" : "modal is-active"}>
-        <div className="modal-content card">
-          <header>
-            Başlık
-          </header>
+      <div className={!isOpen ? "gk-modal" : "gk-modal gk-is-active"}>
+        <div className="gk-modal-content gk-card">
+          <header className="gk-modal-header">Başlık</header>
 
-          <div className="container">
-            İçi
-          </div>
+          <div className="gk-modal-container">İçi</div>
 
-          <footer
-            style={{ justifyContent: "flex-end", height: "55px" }}
-          >
-            <button onClick={this.handleCancel}>
-              İptal
-            </button>
-            <button  onClick={this.handleConfirm}>
-              Ok
-            </button>
+          <footer className="gk-modal-footer">
+            <button onClick={this.handleCancel}>İptal</button>
+            <button onClick={this.handleConfirm}>Ok</button>
           </footer>
         </div>
       </div>
