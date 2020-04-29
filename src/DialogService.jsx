@@ -17,6 +17,7 @@ class DialogService extends Component {
 
     this.state = {
       isOpen: false,
+      modalParams: {},
     };
 
     this.handleCancel = this.handleCancel.bind(this);
@@ -56,8 +57,7 @@ class DialogService extends Component {
   }
 
   show(params = {}) {
-
-    this.setState({ isOpen: true,formComponent:params.formComponent });
+    this.setState({ isOpen: true, modalParams: params });
     return new Promise((res) => {
       resolve = res;
     });
@@ -70,15 +70,14 @@ class DialogService extends Component {
       <div className={!isOpen ? "gk-modal" : "gk-modal gk-is-active"}>
         <div className="gk-modal-content gk-card">
           <header className="gk-modal-header">
-            <h5 className="gk-modal-title">Modal title</h5>
+            <h5 className="gk-modal-title"> {this.state.modalParams.title}</h5>
             <button onClick={this.handleCancel} className="gk-close">
               <span aria-hidden="true">×</span>
             </button>
           </header>
 
           <div className="gk-modal-body">
-            {this.state.formComponent}
-
+            {this.state.modalParams.formComponent}
           </div>
 
           <footer className="gk-modal-footer">
@@ -86,13 +85,13 @@ class DialogService extends Component {
               className="gk-btn gk-btn-secondary"
               onClick={this.handleCancel}
             >
-              İptal
+              {this.state.modalParams.cancelText}
             </button>
             <button
               className="gk-btn gk-btn-primary"
               onClick={this.handleConfirm}
             >
-              Ok
+               {this.state.modalParams.okText}
             </button>
           </footer>
         </div>
