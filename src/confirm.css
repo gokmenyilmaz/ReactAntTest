@@ -46,7 +46,9 @@
 
 .gk-modal-footer {
   justify-content: "flex-end";
+  padding: 15px;
   height: 55px;
+  text-align: right;
   background-color: lightblue;
 }
 
