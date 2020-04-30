@@ -2,13 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+import TestReactTable from "./TestReactTable";
 
-import Mylayout from './Mylayout';
-import Test1 from './Test1';
+// import Mylayout from './Mylayout';
+// import Test1 from './Test1';
+
 
 ReactDOM.render(
 
-    <Test1 />
+    <TestReactTable />
  ,
   document.getElementById('root')
 );
