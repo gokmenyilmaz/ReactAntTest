@@ -47,7 +47,6 @@ class DialogService extends Component {
   };
   handleCancel() {
     this.close();
-
     resolve(false);
   }
 
@@ -70,7 +69,7 @@ class DialogService extends Component {
       <div className={!isOpen ? "gk-modal" : "gk-modal gk-is-active"}>
         <div className="gk-modal-content gk-card">
           <header className="gk-modal-header">
-            <h5 className="gk-modal-title"> {this.state.modalParams.title}</h5>
+            <div className="gk-modal-title"> {this.state.modalParams.title}</div>
             <button onClick={this.handleCancel} className="gk-close">
               <span aria-hidden="true">×</span>
             </button>
@@ -78,13 +77,12 @@ class DialogService extends Component {
 
           <div className="gk-modal-body">{this.state.modalParams.formBody}</div>
 
-          <footer
-            className="gk-modal-footer"
-           
-          >
+          <footer className="gk-modal-footer">
             <button
               style={{
-                display: this.state.modalParams.cancelText ? "inline-block" : "none",
+                display: this.state.modalParams.cancelText
+                  ? "inline-block"
+                  : "none",
               }}
               className="gk-btn gk-btn-secondary"
               onClick={this.handleCancel}
@@ -93,7 +91,9 @@ class DialogService extends Component {
             </button>
             <button
               style={{
-                display: this.state.modalParams.okText ? "inline-block" : "none",
+                display: this.state.modalParams.okText
+                  ? "inline-block"
+                  : "none",
               }}
               className="gk-btn gk-btn-primary"
               onClick={this.handleConfirm}
