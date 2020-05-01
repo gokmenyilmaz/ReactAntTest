@@ -6,7 +6,7 @@ import { Table, Tag } from 'antd';
 const { Column, ColumnGroup } = Table;
 
 export default class TestReactTable extends React.Component {
-  data = [
+  veri = [
     {
       key: "1",
       firstName: "John",
@@ -33,8 +33,13 @@ export default class TestReactTable extends React.Component {
     },
   ];
 
+  constructor()
+  {
+      super();
+      this.state={data:this.veri};
+  }
 
-  Ekle=()=>{
+  ekle=()=>{
       var x={
         key: "3",
         firstName: "Joe",
@@ -44,7 +49,11 @@ export default class TestReactTable extends React.Component {
         tags: ["cool", "teacher"],
       };
 
-      this.data.push(x);
+      var liste=this.state.data;
+
+      liste.push(x);
+
+      this.setState({data:liste})
 
   }
 
@@ -55,9 +64,9 @@ export default class TestReactTable extends React.Component {
     return (
       <div>
 
-        <button onClick={()=>this.Ekle()}>Ekle</button>
+        <button onClick={()=>this.ekle()}>Ekle</button>
 
-        <Table dataSource={this.data}>
+        <Table dataSource={[...this.state.data]}>
           <ColumnGroup title="Name">
             <Column title="First Name" dataIndex="firstName" key="firstName" />
             <Column title="Last Name" dataIndex="lastName" key="lastName" />
